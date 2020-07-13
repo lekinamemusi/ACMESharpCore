@@ -1,3 +1,20 @@
+mine
+1. acmecli --email lekina.memusi@gmail.com --accept-tos
+
+2. acmecli --dns palerp.newmilimanisacco.co.ke --challenge-type dns-01
+
+3. acmecli --dns palerp.newmilimanisacco.co.ke --challenge-type dns-01 --test-challenges
+-- not okay here
+4. acmecli --dns palerp.newmilimanisacco.co.ke --challenge-type dns-01 --answer-challenges
+
+-- not okay above
+
+5. acmecli --dns palerp.newmilimanisacco.co.ke --finalize
+
+6. acmecli --dns palerp.newmilimanisacco.co.ke --export-pfx "C:\Users\ERIC\Documents\certjuly713.pfx" --export-pfx-password " "
+
+
+
 # README - ACMECLI
 
 This project provides an example .NET Core console application that demonstrates one approach
