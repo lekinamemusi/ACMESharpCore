@@ -32,6 +32,7 @@ namespace ACMEForms
 
         IList<string> _authzListWrapper;
         IList<string> _miscChallengesListWrapper;
+        private string finalizeUrlTextBox;
 
         public MainForm()
         {
@@ -39,7 +40,8 @@ namespace ACMEForms
 
             _authzListWrapper = new ReadOnlyListWrapper<string>(
                     () => _lastOrder?.Authorizations?.Length ?? 0,
-                    (i) => {
+                    (i) =>
+                    {
                         var authz = _lastOrder?.Authorizations?[i];
                         if (authz != null)
                             return $"{authz.Details.Identifier.Value} - {authz.Details.Status}";
@@ -268,7 +270,7 @@ namespace ACMEForms
             //orderStatusTextBox.Text = _lastOrder?.Details.Payload.Status;
             //orderExpiresTextBox.Text = _lastOrder?.Details.Payload.Expires;
 
-            //finalizeUrlTextBox.Text = _lastOrder?.Details.Payload.Finalize;
+            finalizeUrlTextBox = _lastOrder?.Details.Payload.Finalize;
             //certificateUrlTextBox.Text = _lastOrder?.Details.Payload.Certificate;
 
             //errorStatusTextBox.Text = _lastOrder?.Details.Payload.Error?.Status?.ToString();
@@ -337,6 +339,7 @@ namespace ACMEForms
         {
             caServerTextBox.Visible = (caServerComboBox.SelectedValue as string) == string.Empty;
         }
+
 
         private async void agreeTosLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -450,7 +453,7 @@ namespace ACMEForms
             {
                 var signer = new PkiJwsTool(256);
                 signer.Import(_account.JwsSigner);
-                
+
                 using (var acme = new AcmeProtocolClient(url, signer: signer,
                         acct: _account.Details))
                 {
@@ -466,6 +469,22 @@ namespace ACMEForms
                 RebindAccountControls();
                 SetStatus("Account updated and saved");
             });
+        }
+
+        private async Task DeactivateAuthorizationAsync(AcmeProtocolClient acme)
+        {
+            var details = _lastOrder.Details;
+            var authzs = new List<DbAuthz>();
+            foreach (var authzUrl in details.Payload.Authorizations)
+            {
+                var authzDetails = await acme.DeactivateAuthorizationAsync(authzUrl);
+                authzs.Add(new DbAuthz
+                {
+                    Url = authzUrl,
+                    Details = authzDetails,
+                });
+            }
+            _lastOrder.Authorizations = authzs.ToArray();
         }
 
         private async Task RefreshOrderAuthorizations(AcmeProtocolClient acme)
@@ -705,6 +724,105 @@ namespace ACMEForms
                     MessageBox.Show("Failed to resolve DNS value: " + ex.Message);
                 }
             });
+        }
+
+        string csrFileLocation;
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            var url = ResolveCaServerEndpoint();
+            if (url == null)
+                return;
+
+            await InvokeWithWaitCursor(async () =>
+            {
+                var signer = new PkiJwsTool(256);
+                signer.Import(_account.JwsSigner);
+
+                using (var acme = new AcmeProtocolClient(url, signer: signer, acct: _account.Details))
+                {
+                    var dir = await acme.GetDirectoryAsync();
+                    acme.Directory = dir;
+
+                    await acme.GetNonceAsync();
+
+                    await DeactivateAuthorizationAsync(acme);
+
+                    //await RefreshOrderAuthorizations(acme);
+                }
+
+                Repo.Saveorder(_lastOrder);
+                RebindOrderControls();
+                SetStatus("Order details and Authorizations Deactivated");
+            });
+        }
+
+        private async void btnUploadCSR_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
+            {
+                //InitialDirectory = @"D:\",
+                Title = "Browse CSR Files",
+
+                CheckFileExists = true,
+                CheckPathExists = true,
+
+                //DefaultExt = "txt",
+                //Filter = "txt files (*.txt)|*.txt",
+                //FilterIndex = 2,
+                //RestoreDirectory = true,
+
+                //ReadOnlyChecked = true,
+                //ShowReadOnly = true
+            };
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                csrFileLocation = openFileDialog1.FileName;
+
+                var byteData = System.IO.File.ReadAllBytes(csrFileLocation);
+
+                var url = ResolveCaServerEndpoint();
+                if (url == null)
+                    return;
+
+                await InvokeWithWaitCursor(async () =>
+                {
+                    var signer = new PkiJwsTool(256);
+                    signer.Import(_account.JwsSigner);
+
+                    try
+                    {
+                        using (var acme = new AcmeProtocolClient(url, signer: signer, acct: _account.Details))
+                        {
+                            var dir = await acme.GetDirectoryAsync();
+                            acme.Directory = dir;
+
+                            await acme.GetNonceAsync();
+
+                            await FinalizeOrderAsync(acme, byteData);
+                        }
+
+                        Repo.Saveorder(_lastOrder);
+                    }
+                    catch(Exception ex)
+                    {
+                        var stringEx = ex.ToString();
+                    }
+
+                });
+            }
+        }
+
+        private async Task FinalizeOrderAsync(AcmeProtocolClient acme, byte[] derEncodedCsr)
+        {
+            var details = _lastOrder.Details;
+            var authzs = new List<DbAuthz>();
+            foreach (var authzUrl in details.Payload.Authorizations)
+            {
+                var authzDetails = await acme.FinalizeOrderAsync(authzUrl, derEncodedCsr);
+                _lastOrder.Details = authzDetails;
+            }
+            _lastOrder.Authorizations = authzs.ToArray();
         }
     }
 

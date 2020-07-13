@@ -104,10 +104,12 @@ namespace ACMEForms
             this.createOrderButton = new System.Windows.Forms.Button();
             this.refreshOrderButton = new System.Windows.Forms.Button();
             this.clearOrderButton = new System.Windows.Forms.Button();
+            this.btnDeactivateAuth = new System.Windows.Forms.Button();
             this.dnsIdentifiersLabel = new System.Windows.Forms.Label();
             this.dnsIdentifiersTextBox = new System.Windows.Forms.TextBox();
             this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.mainStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnUploadCSR = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.accountTabPage.SuspendLayout();
             this.accountPanel.SuspendLayout();
@@ -149,18 +151,20 @@ namespace ACMEForms
             this.tabControl1.Controls.Add(this.ordersTabPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1344, 1521);
+            this.tabControl1.Size = new System.Drawing.Size(672, 367);
             this.tabControl1.TabIndex = 0;
             // 
             // accountTabPage
             // 
             this.accountTabPage.Controls.Add(this.accountPanel);
-            this.accountTabPage.Location = new System.Drawing.Point(8, 39);
+            this.accountTabPage.Location = new System.Drawing.Point(4, 22);
+            this.accountTabPage.Margin = new System.Windows.Forms.Padding(2);
             this.accountTabPage.Name = "accountTabPage";
-            this.accountTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.accountTabPage.Size = new System.Drawing.Size(1328, 1474);
+            this.accountTabPage.Padding = new System.Windows.Forms.Padding(2);
+            this.accountTabPage.Size = new System.Drawing.Size(664, 341);
             this.accountTabPage.TabIndex = 0;
             this.accountTabPage.Text = "Account";
             this.accountTabPage.UseVisualStyleBackColor = true;
@@ -170,15 +174,16 @@ namespace ACMEForms
             this.accountPanel.Controls.Add(this.tableLayoutPanel1);
             this.accountPanel.Controls.Add(this.caServerTextBox);
             this.accountPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.accountPanel.Location = new System.Drawing.Point(3, 3);
+            this.accountPanel.Location = new System.Drawing.Point(2, 2);
+            this.accountPanel.Margin = new System.Windows.Forms.Padding(2);
             this.accountPanel.Name = "accountPanel";
-            this.accountPanel.Size = new System.Drawing.Size(1322, 1468);
+            this.accountPanel.Size = new System.Drawing.Size(660, 337);
             this.accountPanel.TabIndex = 2;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.accountDetailsTabControl, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.contactEmailsLabel, 1, 2);
@@ -189,6 +194,7 @@ namespace ACMEForms
             this.tableLayoutPanel1.Controls.Add(this.accountButtonsFlowLayoutPanel, 1, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -198,7 +204,7 @@ namespace ACMEForms
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1322, 1468);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(660, 337);
             this.tableLayoutPanel1.TabIndex = 16;
             // 
             // accountDetailsTabControl
@@ -207,19 +213,21 @@ namespace ACMEForms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.accountDetailsTabControl.Controls.Add(this.accountDetailsTabPage);
-            this.accountDetailsTabControl.Location = new System.Drawing.Point(27, 378);
+            this.accountDetailsTabControl.Location = new System.Drawing.Point(14, 206);
+            this.accountDetailsTabControl.Margin = new System.Windows.Forms.Padding(2);
             this.accountDetailsTabControl.Name = "accountDetailsTabControl";
             this.accountDetailsTabControl.SelectedIndex = 0;
-            this.accountDetailsTabControl.Size = new System.Drawing.Size(1292, 1087);
+            this.accountDetailsTabControl.Size = new System.Drawing.Size(644, 129);
             this.accountDetailsTabControl.TabIndex = 15;
             // 
             // accountDetailsTabPage
             // 
             this.accountDetailsTabPage.Controls.Add(this.accountPropertyGrid);
-            this.accountDetailsTabPage.Location = new System.Drawing.Point(8, 39);
+            this.accountDetailsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.accountDetailsTabPage.Margin = new System.Windows.Forms.Padding(2);
             this.accountDetailsTabPage.Name = "accountDetailsTabPage";
-            this.accountDetailsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.accountDetailsTabPage.Size = new System.Drawing.Size(1276, 1040);
+            this.accountDetailsTabPage.Padding = new System.Windows.Forms.Padding(2);
+            this.accountDetailsTabPage.Size = new System.Drawing.Size(636, 103);
             this.accountDetailsTabPage.TabIndex = 0;
             this.accountDetailsTabPage.Text = "Account Details";
             this.accountDetailsTabPage.UseVisualStyleBackColor = true;
@@ -227,19 +235,21 @@ namespace ACMEForms
             // accountPropertyGrid
             // 
             this.accountPropertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.accountPropertyGrid.Location = new System.Drawing.Point(3, 3);
+            this.accountPropertyGrid.Location = new System.Drawing.Point(2, 2);
+            this.accountPropertyGrid.Margin = new System.Windows.Forms.Padding(2);
             this.accountPropertyGrid.Name = "accountPropertyGrid";
             this.accountPropertyGrid.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.accountPropertyGrid.Size = new System.Drawing.Size(1270, 1034);
+            this.accountPropertyGrid.Size = new System.Drawing.Size(632, 99);
             this.accountPropertyGrid.TabIndex = 14;
             this.accountPropertyGrid.ToolbarVisible = false;
             // 
             // contactEmailsLabel
             // 
             this.contactEmailsLabel.AutoSize = true;
-            this.contactEmailsLabel.Location = new System.Drawing.Point(27, 64);
+            this.contactEmailsLabel.Location = new System.Drawing.Point(14, 38);
+            this.contactEmailsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.contactEmailsLabel.Name = "contactEmailsLabel";
-            this.contactEmailsLabel.Size = new System.Drawing.Size(162, 25);
+            this.contactEmailsLabel.Size = new System.Drawing.Size(80, 13);
             this.contactEmailsLabel.TabIndex = 0;
             this.contactEmailsLabel.Text = "Contact Emails:";
             this.contactEmailsLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -248,11 +258,12 @@ namespace ACMEForms
             // 
             this.contactEmailsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.contactEmailsTextBox.Location = new System.Drawing.Point(27, 92);
+            this.contactEmailsTextBox.Location = new System.Drawing.Point(14, 53);
+            this.contactEmailsTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.contactEmailsTextBox.Multiline = true;
             this.contactEmailsTextBox.Name = "contactEmailsTextBox";
             this.contactEmailsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.contactEmailsTextBox.Size = new System.Drawing.Size(1292, 142);
+            this.contactEmailsTextBox.Size = new System.Drawing.Size(644, 76);
             this.contactEmailsTextBox.TabIndex = 1;
             // 
             // agreeTosTableLayout
@@ -264,22 +275,22 @@ namespace ACMEForms
             this.agreeTosTableLayout.Controls.Add(this.agreeTosLinkLabel, 2, 0);
             this.agreeTosTableLayout.Controls.Add(this.agreeTosLabel, 0, 0);
             this.agreeTosTableLayout.Controls.Add(this.agreeTosCheckbox, 0, 0);
-            this.agreeTosTableLayout.Location = new System.Drawing.Point(24, 237);
+            this.agreeTosTableLayout.Location = new System.Drawing.Point(12, 131);
             this.agreeTosTableLayout.Margin = new System.Windows.Forms.Padding(0);
             this.agreeTosTableLayout.Name = "agreeTosTableLayout";
             this.agreeTosTableLayout.RowCount = 1;
             this.agreeTosTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.agreeTosTableLayout.Size = new System.Drawing.Size(913, 36);
+            this.agreeTosTableLayout.Size = new System.Drawing.Size(456, 19);
             this.agreeTosTableLayout.TabIndex = 10;
             // 
             // agreeTosLinkLabel
             // 
             this.agreeTosLinkLabel.AutoSize = true;
             this.agreeTosLinkLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.agreeTosLinkLabel.Location = new System.Drawing.Point(127, 0);
+            this.agreeTosLinkLabel.Location = new System.Drawing.Point(66, 0);
             this.agreeTosLinkLabel.Margin = new System.Windows.Forms.Padding(0);
             this.agreeTosLinkLabel.Name = "agreeTosLinkLabel";
-            this.agreeTosLinkLabel.Size = new System.Drawing.Size(786, 36);
+            this.agreeTosLinkLabel.Size = new System.Drawing.Size(390, 19);
             this.agreeTosLinkLabel.TabIndex = 4;
             this.agreeTosLinkLabel.TabStop = true;
             this.agreeTosLinkLabel.Text = "Terms of Service";
@@ -290,10 +301,10 @@ namespace ACMEForms
             // 
             this.agreeTosLabel.AutoSize = true;
             this.agreeTosLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.agreeTosLabel.Location = new System.Drawing.Point(34, 0);
+            this.agreeTosLabel.Location = new System.Drawing.Point(19, 0);
             this.agreeTosLabel.Margin = new System.Windows.Forms.Padding(0);
             this.agreeTosLabel.Name = "agreeTosLabel";
-            this.agreeTosLabel.Size = new System.Drawing.Size(93, 36);
+            this.agreeTosLabel.Size = new System.Drawing.Size(47, 19);
             this.agreeTosLabel.TabIndex = 11;
             this.agreeTosLabel.Text = "Agree to";
             this.agreeTosLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -302,18 +313,20 @@ namespace ACMEForms
             // 
             this.agreeTosCheckbox.AutoSize = true;
             this.agreeTosCheckbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.agreeTosCheckbox.Location = new System.Drawing.Point(3, 3);
+            this.agreeTosCheckbox.Location = new System.Drawing.Point(2, 2);
+            this.agreeTosCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.agreeTosCheckbox.Name = "agreeTosCheckbox";
-            this.agreeTosCheckbox.Size = new System.Drawing.Size(28, 30);
+            this.agreeTosCheckbox.Size = new System.Drawing.Size(15, 15);
             this.agreeTosCheckbox.TabIndex = 2;
             this.agreeTosCheckbox.UseVisualStyleBackColor = true;
             // 
             // caServerLabel
             // 
             this.caServerLabel.AutoSize = true;
-            this.caServerLabel.Location = new System.Drawing.Point(27, 0);
+            this.caServerLabel.Location = new System.Drawing.Point(14, 0);
+            this.caServerLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.caServerLabel.Name = "caServerLabel";
-            this.caServerLabel.Size = new System.Drawing.Size(116, 25);
+            this.caServerLabel.Size = new System.Drawing.Size(58, 13);
             this.caServerLabel.TabIndex = 6;
             this.caServerLabel.Text = "CA Server:";
             this.caServerLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -323,9 +336,10 @@ namespace ACMEForms
             this.caServerComboBox.DisplayMember = "Value";
             this.caServerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.caServerComboBox.FormattingEnabled = true;
-            this.caServerComboBox.Location = new System.Drawing.Point(27, 28);
+            this.caServerComboBox.Location = new System.Drawing.Point(14, 15);
+            this.caServerComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.caServerComboBox.Name = "caServerComboBox";
-            this.caServerComboBox.Size = new System.Drawing.Size(646, 33);
+            this.caServerComboBox.Size = new System.Drawing.Size(325, 21);
             this.caServerComboBox.TabIndex = 3;
             this.caServerComboBox.ValueMember = "Key";
             this.caServerComboBox.SelectedIndexChanged += new System.EventHandler(this.caServerComboBox_SelectedIndexChanged);
@@ -337,21 +351,22 @@ namespace ACMEForms
             this.accountButtonsFlowLayoutPanel.Controls.Add(this.createAccountButton);
             this.accountButtonsFlowLayoutPanel.Controls.Add(this.refreshAccountButton);
             this.accountButtonsFlowLayoutPanel.Controls.Add(this.updateAccountButton);
-            this.accountButtonsFlowLayoutPanel.Location = new System.Drawing.Point(27, 276);
+            this.accountButtonsFlowLayoutPanel.Location = new System.Drawing.Point(14, 152);
+            this.accountButtonsFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
             this.accountButtonsFlowLayoutPanel.Name = "accountButtonsFlowLayoutPanel";
-            this.accountButtonsFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.accountButtonsFlowLayoutPanel.Size = new System.Drawing.Size(1292, 96);
+            this.accountButtonsFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.accountButtonsFlowLayoutPanel.Size = new System.Drawing.Size(644, 50);
             this.accountButtonsFlowLayoutPanel.TabIndex = 14;
             // 
             // createAccountButton
             // 
             this.createAccountButton.AutoSize = true;
             this.createAccountButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.createAccountButton.Location = new System.Drawing.Point(20, 20);
-            this.createAccountButton.Margin = new System.Windows.Forms.Padding(10);
+            this.createAccountButton.Location = new System.Drawing.Point(10, 10);
+            this.createAccountButton.Margin = new System.Windows.Forms.Padding(5);
             this.createAccountButton.Name = "createAccountButton";
-            this.createAccountButton.Padding = new System.Windows.Forms.Padding(10);
-            this.createAccountButton.Size = new System.Drawing.Size(190, 55);
+            this.createAccountButton.Padding = new System.Windows.Forms.Padding(5);
+            this.createAccountButton.Size = new System.Drawing.Size(101, 33);
             this.createAccountButton.TabIndex = 5;
             this.createAccountButton.Text = "Create Account";
             this.createAccountButton.UseVisualStyleBackColor = true;
@@ -362,11 +377,11 @@ namespace ACMEForms
             this.refreshAccountButton.AutoSize = true;
             this.refreshAccountButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.refreshAccountButton.Enabled = false;
-            this.refreshAccountButton.Location = new System.Drawing.Point(230, 20);
-            this.refreshAccountButton.Margin = new System.Windows.Forms.Padding(10);
+            this.refreshAccountButton.Location = new System.Drawing.Point(121, 10);
+            this.refreshAccountButton.Margin = new System.Windows.Forms.Padding(5);
             this.refreshAccountButton.Name = "refreshAccountButton";
-            this.refreshAccountButton.Padding = new System.Windows.Forms.Padding(10);
-            this.refreshAccountButton.Size = new System.Drawing.Size(201, 55);
+            this.refreshAccountButton.Padding = new System.Windows.Forms.Padding(5);
+            this.refreshAccountButton.Size = new System.Drawing.Size(107, 33);
             this.refreshAccountButton.TabIndex = 6;
             this.refreshAccountButton.Text = "Refresh Account";
             this.refreshAccountButton.UseVisualStyleBackColor = true;
@@ -376,11 +391,11 @@ namespace ACMEForms
             // 
             this.updateAccountButton.AutoSize = true;
             this.updateAccountButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.updateAccountButton.Location = new System.Drawing.Point(451, 20);
-            this.updateAccountButton.Margin = new System.Windows.Forms.Padding(10);
+            this.updateAccountButton.Location = new System.Drawing.Point(238, 10);
+            this.updateAccountButton.Margin = new System.Windows.Forms.Padding(5);
             this.updateAccountButton.Name = "updateAccountButton";
-            this.updateAccountButton.Padding = new System.Windows.Forms.Padding(10);
-            this.updateAccountButton.Size = new System.Drawing.Size(195, 55);
+            this.updateAccountButton.Padding = new System.Windows.Forms.Padding(5);
+            this.updateAccountButton.Size = new System.Drawing.Size(105, 33);
             this.updateAccountButton.TabIndex = 6;
             this.updateAccountButton.Text = "Update Account";
             this.updateAccountButton.UseVisualStyleBackColor = true;
@@ -390,19 +405,21 @@ namespace ACMEForms
             // 
             this.caServerTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.caServerTextBox.Location = new System.Drawing.Point(627, 5);
+            this.caServerTextBox.Location = new System.Drawing.Point(314, 3);
+            this.caServerTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.caServerTextBox.Name = "caServerTextBox";
-            this.caServerTextBox.Size = new System.Drawing.Size(230, 31);
+            this.caServerTextBox.Size = new System.Drawing.Size(116, 20);
             this.caServerTextBox.TabIndex = 7;
             this.caServerTextBox.Visible = false;
             // 
             // ordersTabPage
             // 
             this.ordersTabPage.Controls.Add(this.orderTableLayoutPanel);
-            this.ordersTabPage.Location = new System.Drawing.Point(8, 39);
+            this.ordersTabPage.Location = new System.Drawing.Point(4, 22);
+            this.ordersTabPage.Margin = new System.Windows.Forms.Padding(2);
             this.ordersTabPage.Name = "ordersTabPage";
-            this.ordersTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ordersTabPage.Size = new System.Drawing.Size(1328, 1474);
+            this.ordersTabPage.Padding = new System.Windows.Forms.Padding(2);
+            this.ordersTabPage.Size = new System.Drawing.Size(664, 341);
             this.ordersTabPage.TabIndex = 1;
             this.ordersTabPage.Text = "Orders";
             this.ordersTabPage.UseVisualStyleBackColor = true;
@@ -410,7 +427,7 @@ namespace ACMEForms
             // orderTableLayoutPanel
             // 
             this.orderTableLayoutPanel.ColumnCount = 2;
-            this.orderTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.orderTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
             this.orderTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.2803F));
             this.orderTableLayoutPanel.Controls.Add(this.orderDetailsTabControl, 1, 4);
             this.orderTableLayoutPanel.Controls.Add(this.tableLayoutPanel3, 1, 2);
@@ -418,7 +435,8 @@ namespace ACMEForms
             this.orderTableLayoutPanel.Controls.Add(this.dnsIdentifiersLabel, 1, 0);
             this.orderTableLayoutPanel.Controls.Add(this.dnsIdentifiersTextBox, 1, 1);
             this.orderTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.orderTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            this.orderTableLayoutPanel.Location = new System.Drawing.Point(2, 2);
+            this.orderTableLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
             this.orderTableLayoutPanel.Name = "orderTableLayoutPanel";
             this.orderTableLayoutPanel.RowCount = 6;
             this.orderTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -426,8 +444,8 @@ namespace ACMEForms
             this.orderTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.orderTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.orderTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.orderTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.orderTableLayoutPanel.Size = new System.Drawing.Size(1322, 1468);
+            this.orderTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.orderTableLayoutPanel.Size = new System.Drawing.Size(660, 337);
             this.orderTableLayoutPanel.TabIndex = 1;
             // 
             // orderDetailsTabControl
@@ -437,19 +455,21 @@ namespace ACMEForms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.orderDetailsTabControl.Controls.Add(this.orderDetailsTabPage);
             this.orderDetailsTabControl.Controls.Add(this.authorizationsTabPage);
-            this.orderDetailsTabControl.Location = new System.Drawing.Point(34, 300);
+            this.orderDetailsTabControl.Location = new System.Drawing.Point(18, 161);
+            this.orderDetailsTabControl.Margin = new System.Windows.Forms.Padding(2);
             this.orderDetailsTabControl.Name = "orderDetailsTabControl";
             this.orderDetailsTabControl.SelectedIndex = 0;
-            this.orderDetailsTabControl.Size = new System.Drawing.Size(1285, 1145);
+            this.orderDetailsTabControl.Size = new System.Drawing.Size(640, 164);
             this.orderDetailsTabControl.TabIndex = 15;
             // 
             // orderDetailsTabPage
             // 
             this.orderDetailsTabPage.Controls.Add(this.orderPropertyGrid);
-            this.orderDetailsTabPage.Location = new System.Drawing.Point(8, 39);
+            this.orderDetailsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.orderDetailsTabPage.Margin = new System.Windows.Forms.Padding(2);
             this.orderDetailsTabPage.Name = "orderDetailsTabPage";
-            this.orderDetailsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.orderDetailsTabPage.Size = new System.Drawing.Size(1269, 1098);
+            this.orderDetailsTabPage.Padding = new System.Windows.Forms.Padding(2);
+            this.orderDetailsTabPage.Size = new System.Drawing.Size(632, 138);
             this.orderDetailsTabPage.TabIndex = 0;
             this.orderDetailsTabPage.Text = "Order Details";
             this.orderDetailsTabPage.UseVisualStyleBackColor = true;
@@ -457,20 +477,22 @@ namespace ACMEForms
             // orderPropertyGrid
             // 
             this.orderPropertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.orderPropertyGrid.Location = new System.Drawing.Point(3, 3);
+            this.orderPropertyGrid.Location = new System.Drawing.Point(2, 2);
+            this.orderPropertyGrid.Margin = new System.Windows.Forms.Padding(2);
             this.orderPropertyGrid.Name = "orderPropertyGrid";
             this.orderPropertyGrid.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.orderPropertyGrid.Size = new System.Drawing.Size(1263, 1092);
+            this.orderPropertyGrid.Size = new System.Drawing.Size(628, 134);
             this.orderPropertyGrid.TabIndex = 23;
             this.orderPropertyGrid.ToolbarVisible = false;
             // 
             // authorizationsTabPage
             // 
             this.authorizationsTabPage.Controls.Add(this.tableLayoutPanel4);
-            this.authorizationsTabPage.Location = new System.Drawing.Point(8, 39);
+            this.authorizationsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.authorizationsTabPage.Margin = new System.Windows.Forms.Padding(2);
             this.authorizationsTabPage.Name = "authorizationsTabPage";
-            this.authorizationsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.authorizationsTabPage.Size = new System.Drawing.Size(1269, 1098);
+            this.authorizationsTabPage.Padding = new System.Windows.Forms.Padding(2);
+            this.authorizationsTabPage.Size = new System.Drawing.Size(632, 138);
             this.authorizationsTabPage.TabIndex = 1;
             this.authorizationsTabPage.Text = "Authorizations";
             this.authorizationsTabPage.UseVisualStyleBackColor = true;
@@ -478,28 +500,29 @@ namespace ACMEForms
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 19F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.authorizationsListBox, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.authorizationsTabControl, 1, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1263, 1092);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(628, 134);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // authorizationsListBox
             // 
             this.authorizationsListBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.authorizationsListBox.FormattingEnabled = true;
-            this.authorizationsListBox.ItemHeight = 25;
-            this.authorizationsListBox.Location = new System.Drawing.Point(22, 3);
+            this.authorizationsListBox.Location = new System.Drawing.Point(12, 2);
+            this.authorizationsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.authorizationsListBox.Name = "authorizationsListBox";
-            this.authorizationsListBox.Size = new System.Drawing.Size(1238, 104);
+            this.authorizationsListBox.Size = new System.Drawing.Size(614, 56);
             this.authorizationsListBox.TabIndex = 17;
             this.authorizationsListBox.SelectedIndexChanged += new System.EventHandler(this.authorizationsListBox_SelectedIndexChanged);
             // 
@@ -508,19 +531,21 @@ namespace ACMEForms
             this.authorizationsTabControl.Controls.Add(this.authorizationDetailsTabPage);
             this.authorizationsTabControl.Controls.Add(this.challengesTabPage);
             this.authorizationsTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.authorizationsTabControl.Location = new System.Drawing.Point(22, 113);
+            this.authorizationsTabControl.Location = new System.Drawing.Point(12, 62);
+            this.authorizationsTabControl.Margin = new System.Windows.Forms.Padding(2);
             this.authorizationsTabControl.Name = "authorizationsTabControl";
             this.authorizationsTabControl.SelectedIndex = 0;
-            this.authorizationsTabControl.Size = new System.Drawing.Size(1238, 976);
+            this.authorizationsTabControl.Size = new System.Drawing.Size(614, 70);
             this.authorizationsTabControl.TabIndex = 33;
             // 
             // authorizationDetailsTabPage
             // 
             this.authorizationDetailsTabPage.Controls.Add(this.tableLayoutPanel2);
-            this.authorizationDetailsTabPage.Location = new System.Drawing.Point(8, 39);
+            this.authorizationDetailsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.authorizationDetailsTabPage.Margin = new System.Windows.Forms.Padding(2);
             this.authorizationDetailsTabPage.Name = "authorizationDetailsTabPage";
-            this.authorizationDetailsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.authorizationDetailsTabPage.Size = new System.Drawing.Size(1222, 929);
+            this.authorizationDetailsTabPage.Padding = new System.Windows.Forms.Padding(2);
+            this.authorizationDetailsTabPage.Size = new System.Drawing.Size(606, 44);
             this.authorizationDetailsTabPage.TabIndex = 0;
             this.authorizationDetailsTabPage.Text = "Details";
             this.authorizationDetailsTabPage.UseVisualStyleBackColor = true;
@@ -528,27 +553,29 @@ namespace ACMEForms
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.authorizationPropertyGrid, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.challengesTabControl, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1216, 923);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(602, 40);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // authorizationPropertyGrid
             // 
             this.authorizationPropertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.authorizationPropertyGrid.HelpVisible = false;
-            this.authorizationPropertyGrid.Location = new System.Drawing.Point(24, 3);
+            this.authorizationPropertyGrid.Location = new System.Drawing.Point(12, 2);
+            this.authorizationPropertyGrid.Margin = new System.Windows.Forms.Padding(2);
             this.authorizationPropertyGrid.Name = "authorizationPropertyGrid";
             this.authorizationPropertyGrid.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.authorizationPropertyGrid.Size = new System.Drawing.Size(1189, 498);
+            this.authorizationPropertyGrid.Size = new System.Drawing.Size(588, 1);
             this.authorizationPropertyGrid.TabIndex = 29;
             this.authorizationPropertyGrid.ToolbarVisible = false;
             // 
@@ -557,20 +584,22 @@ namespace ACMEForms
             this.challengesTabControl.Controls.Add(this.dnsChallengeTabPage);
             this.challengesTabControl.Controls.Add(this.httpChallengeTabPage);
             this.challengesTabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.challengesTabControl.Location = new System.Drawing.Point(24, 507);
+            this.challengesTabControl.Location = new System.Drawing.Point(12, -177);
+            this.challengesTabControl.Margin = new System.Windows.Forms.Padding(2);
             this.challengesTabControl.Name = "challengesTabControl";
             this.challengesTabControl.SelectedIndex = 0;
-            this.challengesTabControl.Size = new System.Drawing.Size(1189, 413);
+            this.challengesTabControl.Size = new System.Drawing.Size(588, 215);
             this.challengesTabControl.TabIndex = 25;
             this.challengesTabControl.SelectedIndexChanged += new System.EventHandler(this.challengesTabControl_SelectedIndexChanged);
             // 
             // dnsChallengeTabPage
             // 
             this.dnsChallengeTabPage.Controls.Add(this.tableLayoutPanel7);
-            this.dnsChallengeTabPage.Location = new System.Drawing.Point(8, 39);
+            this.dnsChallengeTabPage.Location = new System.Drawing.Point(4, 22);
+            this.dnsChallengeTabPage.Margin = new System.Windows.Forms.Padding(2);
             this.dnsChallengeTabPage.Name = "dnsChallengeTabPage";
-            this.dnsChallengeTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.dnsChallengeTabPage.Size = new System.Drawing.Size(1173, 366);
+            this.dnsChallengeTabPage.Padding = new System.Windows.Forms.Padding(2);
+            this.dnsChallengeTabPage.Size = new System.Drawing.Size(580, 189);
             this.dnsChallengeTabPage.TabIndex = 0;
             this.dnsChallengeTabPage.Text = "DNS Challenge";
             this.dnsChallengeTabPage.UseVisualStyleBackColor = true;
@@ -578,7 +607,7 @@ namespace ACMEForms
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Controls.Add(this.dnsRecordValueTextBox, 1, 2);
             this.tableLayoutPanel7.Controls.Add(this.dnsRecordNameTextBox, 1, 0);
@@ -588,25 +617,27 @@ namespace ACMEForms
             this.tableLayoutPanel7.Controls.Add(this.dnsRecordNameLabel, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.flowLayoutPanel2, 1, 3);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 4;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1167, 360);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(576, 185);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
             // dnsRecordValueTextBox
             // 
             this.dnsRecordValueTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dnsRecordValueTextBox.Location = new System.Drawing.Point(223, 77);
+            this.dnsRecordValueTextBox.Location = new System.Drawing.Point(112, 50);
+            this.dnsRecordValueTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.dnsRecordValueTextBox.Multiline = true;
             this.dnsRecordValueTextBox.Name = "dnsRecordValueTextBox";
             this.dnsRecordValueTextBox.ReadOnly = true;
             this.dnsRecordValueTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.dnsRecordValueTextBox.Size = new System.Drawing.Size(941, 194);
+            this.dnsRecordValueTextBox.Size = new System.Drawing.Size(462, 87);
             this.dnsRecordValueTextBox.TabIndex = 8;
             this.dnsRecordValueTextBox.WordWrap = false;
             // 
@@ -614,18 +645,20 @@ namespace ACMEForms
             // 
             this.dnsRecordNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dnsRecordNameTextBox.Location = new System.Drawing.Point(223, 3);
+            this.dnsRecordNameTextBox.Location = new System.Drawing.Point(112, 2);
+            this.dnsRecordNameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.dnsRecordNameTextBox.Name = "dnsRecordNameTextBox";
             this.dnsRecordNameTextBox.ReadOnly = true;
-            this.dnsRecordNameTextBox.Size = new System.Drawing.Size(941, 31);
+            this.dnsRecordNameTextBox.Size = new System.Drawing.Size(462, 20);
             this.dnsRecordNameTextBox.TabIndex = 4;
             // 
             // dnsRecordValueLabel
             // 
             this.dnsRecordValueLabel.AutoSize = true;
-            this.dnsRecordValueLabel.Location = new System.Drawing.Point(3, 74);
+            this.dnsRecordValueLabel.Location = new System.Drawing.Point(2, 48);
+            this.dnsRecordValueLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dnsRecordValueLabel.Name = "dnsRecordValueLabel";
-            this.dnsRecordValueLabel.Size = new System.Drawing.Size(148, 25);
+            this.dnsRecordValueLabel.Size = new System.Drawing.Size(75, 13);
             this.dnsRecordValueLabel.TabIndex = 9;
             this.dnsRecordValueLabel.Text = "Record Value:";
             // 
@@ -633,27 +666,30 @@ namespace ACMEForms
             // 
             this.dnsRecordTypeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dnsRecordTypeTextBox.Location = new System.Drawing.Point(223, 40);
+            this.dnsRecordTypeTextBox.Location = new System.Drawing.Point(112, 26);
+            this.dnsRecordTypeTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.dnsRecordTypeTextBox.Name = "dnsRecordTypeTextBox";
             this.dnsRecordTypeTextBox.ReadOnly = true;
-            this.dnsRecordTypeTextBox.Size = new System.Drawing.Size(941, 31);
+            this.dnsRecordTypeTextBox.Size = new System.Drawing.Size(462, 20);
             this.dnsRecordTypeTextBox.TabIndex = 6;
             // 
             // dnsRecordTypeLabel
             // 
             this.dnsRecordTypeLabel.AutoSize = true;
-            this.dnsRecordTypeLabel.Location = new System.Drawing.Point(3, 37);
+            this.dnsRecordTypeLabel.Location = new System.Drawing.Point(2, 24);
+            this.dnsRecordTypeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dnsRecordTypeLabel.Name = "dnsRecordTypeLabel";
-            this.dnsRecordTypeLabel.Size = new System.Drawing.Size(141, 25);
+            this.dnsRecordTypeLabel.Size = new System.Drawing.Size(72, 13);
             this.dnsRecordTypeLabel.TabIndex = 7;
             this.dnsRecordTypeLabel.Text = "Record Type:";
             // 
             // dnsRecordNameLabel
             // 
             this.dnsRecordNameLabel.AutoSize = true;
-            this.dnsRecordNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.dnsRecordNameLabel.Location = new System.Drawing.Point(2, 0);
+            this.dnsRecordNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dnsRecordNameLabel.Name = "dnsRecordNameLabel";
-            this.dnsRecordNameLabel.Size = new System.Drawing.Size(149, 25);
+            this.dnsRecordNameLabel.Size = new System.Drawing.Size(76, 13);
             this.dnsRecordNameLabel.TabIndex = 5;
             this.dnsRecordNameLabel.Text = "Record Name:";
             // 
@@ -662,20 +698,21 @@ namespace ACMEForms
             this.flowLayoutPanel2.Controls.Add(this.submitDnsAnswerButton);
             this.flowLayoutPanel2.Controls.Add(this.testDnsAnswerButton);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(223, 277);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(112, 141);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(941, 80);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(462, 42);
             this.flowLayoutPanel2.TabIndex = 10;
             // 
             // submitDnsAnswerButton
             // 
             this.submitDnsAnswerButton.AutoSize = true;
             this.submitDnsAnswerButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.submitDnsAnswerButton.Location = new System.Drawing.Point(10, 10);
-            this.submitDnsAnswerButton.Margin = new System.Windows.Forms.Padding(10);
+            this.submitDnsAnswerButton.Location = new System.Drawing.Point(5, 5);
+            this.submitDnsAnswerButton.Margin = new System.Windows.Forms.Padding(5);
             this.submitDnsAnswerButton.Name = "submitDnsAnswerButton";
-            this.submitDnsAnswerButton.Padding = new System.Windows.Forms.Padding(10);
-            this.submitDnsAnswerButton.Size = new System.Drawing.Size(235, 55);
+            this.submitDnsAnswerButton.Padding = new System.Windows.Forms.Padding(5);
+            this.submitDnsAnswerButton.Size = new System.Drawing.Size(123, 33);
             this.submitDnsAnswerButton.TabIndex = 8;
             this.submitDnsAnswerButton.Text = "Submit DNS Answer";
             this.submitDnsAnswerButton.UseVisualStyleBackColor = true;
@@ -685,11 +722,11 @@ namespace ACMEForms
             // 
             this.testDnsAnswerButton.AutoSize = true;
             this.testDnsAnswerButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.testDnsAnswerButton.Location = new System.Drawing.Point(265, 10);
-            this.testDnsAnswerButton.Margin = new System.Windows.Forms.Padding(10);
+            this.testDnsAnswerButton.Location = new System.Drawing.Point(138, 5);
+            this.testDnsAnswerButton.Margin = new System.Windows.Forms.Padding(5);
             this.testDnsAnswerButton.Name = "testDnsAnswerButton";
-            this.testDnsAnswerButton.Padding = new System.Windows.Forms.Padding(10);
-            this.testDnsAnswerButton.Size = new System.Drawing.Size(211, 55);
+            this.testDnsAnswerButton.Padding = new System.Windows.Forms.Padding(5);
+            this.testDnsAnswerButton.Size = new System.Drawing.Size(112, 33);
             this.testDnsAnswerButton.TabIndex = 9;
             this.testDnsAnswerButton.Text = "Test DNS Answer";
             this.testDnsAnswerButton.UseVisualStyleBackColor = true;
@@ -698,10 +735,11 @@ namespace ACMEForms
             // httpChallengeTabPage
             // 
             this.httpChallengeTabPage.Controls.Add(this.tableLayoutPanel5);
-            this.httpChallengeTabPage.Location = new System.Drawing.Point(8, 39);
+            this.httpChallengeTabPage.Location = new System.Drawing.Point(4, 22);
+            this.httpChallengeTabPage.Margin = new System.Windows.Forms.Padding(2);
             this.httpChallengeTabPage.Name = "httpChallengeTabPage";
-            this.httpChallengeTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.httpChallengeTabPage.Size = new System.Drawing.Size(1173, 366);
+            this.httpChallengeTabPage.Padding = new System.Windows.Forms.Padding(2);
+            this.httpChallengeTabPage.Size = new System.Drawing.Size(580, 189);
             this.httpChallengeTabPage.TabIndex = 1;
             this.httpChallengeTabPage.Text = "HTTP Challenge";
             this.httpChallengeTabPage.UseVisualStyleBackColor = true;
@@ -709,7 +747,7 @@ namespace ACMEForms
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.httpResourceValueLabel, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.httpResourceValueTextBox, 1, 3);
@@ -721,7 +759,8 @@ namespace ACMEForms
             this.tableLayoutPanel5.Controls.Add(this.httpResourceContentTypeTextBox, 1, 2);
             this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel1, 1, 4);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 5;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -729,36 +768,39 @@ namespace ACMEForms
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1167, 360);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(576, 185);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // httpResourceValueLabel
             // 
             this.httpResourceValueLabel.AutoSize = true;
-            this.httpResourceValueLabel.Location = new System.Drawing.Point(3, 111);
+            this.httpResourceValueLabel.Location = new System.Drawing.Point(2, 72);
+            this.httpResourceValueLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.httpResourceValueLabel.Name = "httpResourceValueLabel";
-            this.httpResourceValueLabel.Size = new System.Drawing.Size(171, 25);
+            this.httpResourceValueLabel.Size = new System.Drawing.Size(86, 13);
             this.httpResourceValueLabel.TabIndex = 13;
             this.httpResourceValueLabel.Text = "Resource Value:";
             // 
             // httpResourceValueTextBox
             // 
             this.httpResourceValueTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.httpResourceValueTextBox.Location = new System.Drawing.Point(223, 114);
+            this.httpResourceValueTextBox.Location = new System.Drawing.Point(112, 74);
+            this.httpResourceValueTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.httpResourceValueTextBox.Multiline = true;
             this.httpResourceValueTextBox.Name = "httpResourceValueTextBox";
             this.httpResourceValueTextBox.ReadOnly = true;
             this.httpResourceValueTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.httpResourceValueTextBox.Size = new System.Drawing.Size(941, 157);
+            this.httpResourceValueTextBox.Size = new System.Drawing.Size(462, 63);
             this.httpResourceValueTextBox.TabIndex = 12;
             this.httpResourceValueTextBox.WordWrap = false;
             // 
             // httpResourceContentTypeLabel
             // 
             this.httpResourceContentTypeLabel.AutoSize = true;
-            this.httpResourceContentTypeLabel.Location = new System.Drawing.Point(3, 74);
+            this.httpResourceContentTypeLabel.Location = new System.Drawing.Point(2, 48);
+            this.httpResourceContentTypeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.httpResourceContentTypeLabel.Name = "httpResourceContentTypeLabel";
-            this.httpResourceContentTypeLabel.Size = new System.Drawing.Size(185, 25);
+            this.httpResourceContentTypeLabel.Size = new System.Drawing.Size(92, 13);
             this.httpResourceContentTypeLabel.TabIndex = 11;
             this.httpResourceContentTypeLabel.Text = "Res Content-type:";
             // 
@@ -766,18 +808,20 @@ namespace ACMEForms
             // 
             this.httpResourceUrlTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.httpResourceUrlTextBox.Location = new System.Drawing.Point(223, 3);
+            this.httpResourceUrlTextBox.Location = new System.Drawing.Point(112, 2);
+            this.httpResourceUrlTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.httpResourceUrlTextBox.Name = "httpResourceUrlTextBox";
             this.httpResourceUrlTextBox.ReadOnly = true;
-            this.httpResourceUrlTextBox.Size = new System.Drawing.Size(941, 31);
+            this.httpResourceUrlTextBox.Size = new System.Drawing.Size(462, 20);
             this.httpResourceUrlTextBox.TabIndex = 6;
             // 
             // httpResourcePathLabel
             // 
             this.httpResourcePathLabel.AutoSize = true;
-            this.httpResourcePathLabel.Location = new System.Drawing.Point(3, 37);
+            this.httpResourcePathLabel.Location = new System.Drawing.Point(2, 24);
+            this.httpResourcePathLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.httpResourcePathLabel.Name = "httpResourcePathLabel";
-            this.httpResourcePathLabel.Size = new System.Drawing.Size(160, 25);
+            this.httpResourcePathLabel.Size = new System.Drawing.Size(81, 13);
             this.httpResourcePathLabel.TabIndex = 9;
             this.httpResourcePathLabel.Text = "Resource Path:";
             // 
@@ -785,18 +829,20 @@ namespace ACMEForms
             // 
             this.httpResourcePathTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.httpResourcePathTextBox.Location = new System.Drawing.Point(223, 40);
+            this.httpResourcePathTextBox.Location = new System.Drawing.Point(112, 26);
+            this.httpResourcePathTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.httpResourcePathTextBox.Name = "httpResourcePathTextBox";
             this.httpResourcePathTextBox.ReadOnly = true;
-            this.httpResourcePathTextBox.Size = new System.Drawing.Size(941, 31);
+            this.httpResourcePathTextBox.Size = new System.Drawing.Size(462, 20);
             this.httpResourcePathTextBox.TabIndex = 8;
             // 
             // httpResourceUrlLabel
             // 
             this.httpResourceUrlLabel.AutoSize = true;
-            this.httpResourceUrlLabel.Location = new System.Drawing.Point(3, 0);
+            this.httpResourceUrlLabel.Location = new System.Drawing.Point(2, 0);
+            this.httpResourceUrlLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.httpResourceUrlLabel.Name = "httpResourceUrlLabel";
-            this.httpResourceUrlLabel.Size = new System.Drawing.Size(158, 25);
+            this.httpResourceUrlLabel.Size = new System.Drawing.Size(81, 13);
             this.httpResourceUrlLabel.TabIndex = 7;
             this.httpResourceUrlLabel.Text = "Resource URL:";
             // 
@@ -804,10 +850,11 @@ namespace ACMEForms
             // 
             this.httpResourceContentTypeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.httpResourceContentTypeTextBox.Location = new System.Drawing.Point(223, 77);
+            this.httpResourceContentTypeTextBox.Location = new System.Drawing.Point(112, 50);
+            this.httpResourceContentTypeTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.httpResourceContentTypeTextBox.Name = "httpResourceContentTypeTextBox";
             this.httpResourceContentTypeTextBox.ReadOnly = true;
-            this.httpResourceContentTypeTextBox.Size = new System.Drawing.Size(941, 31);
+            this.httpResourceContentTypeTextBox.Size = new System.Drawing.Size(462, 20);
             this.httpResourceContentTypeTextBox.TabIndex = 10;
             // 
             // flowLayoutPanel1
@@ -815,20 +862,21 @@ namespace ACMEForms
             this.flowLayoutPanel1.Controls.Add(this.submitHttpAnswerButton);
             this.flowLayoutPanel1.Controls.Add(this.testHttpAnswerButton);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(223, 277);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(112, 141);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(941, 80);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(462, 42);
             this.flowLayoutPanel1.TabIndex = 14;
             // 
             // submitHttpAnswerButton
             // 
             this.submitHttpAnswerButton.AutoSize = true;
             this.submitHttpAnswerButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.submitHttpAnswerButton.Location = new System.Drawing.Point(10, 10);
-            this.submitHttpAnswerButton.Margin = new System.Windows.Forms.Padding(10);
+            this.submitHttpAnswerButton.Location = new System.Drawing.Point(5, 5);
+            this.submitHttpAnswerButton.Margin = new System.Windows.Forms.Padding(5);
             this.submitHttpAnswerButton.Name = "submitHttpAnswerButton";
-            this.submitHttpAnswerButton.Padding = new System.Windows.Forms.Padding(10);
-            this.submitHttpAnswerButton.Size = new System.Drawing.Size(246, 55);
+            this.submitHttpAnswerButton.Padding = new System.Windows.Forms.Padding(5);
+            this.submitHttpAnswerButton.Size = new System.Drawing.Size(129, 33);
             this.submitHttpAnswerButton.TabIndex = 7;
             this.submitHttpAnswerButton.Text = "Submit HTTP Answer";
             this.submitHttpAnswerButton.UseVisualStyleBackColor = true;
@@ -837,11 +885,11 @@ namespace ACMEForms
             // 
             this.testHttpAnswerButton.AutoSize = true;
             this.testHttpAnswerButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.testHttpAnswerButton.Location = new System.Drawing.Point(276, 10);
-            this.testHttpAnswerButton.Margin = new System.Windows.Forms.Padding(10);
+            this.testHttpAnswerButton.Location = new System.Drawing.Point(144, 5);
+            this.testHttpAnswerButton.Margin = new System.Windows.Forms.Padding(5);
             this.testHttpAnswerButton.Name = "testHttpAnswerButton";
-            this.testHttpAnswerButton.Padding = new System.Windows.Forms.Padding(10);
-            this.testHttpAnswerButton.Size = new System.Drawing.Size(222, 55);
+            this.testHttpAnswerButton.Padding = new System.Windows.Forms.Padding(5);
+            this.testHttpAnswerButton.Size = new System.Drawing.Size(118, 33);
             this.testHttpAnswerButton.TabIndex = 8;
             this.testHttpAnswerButton.Text = "Test HTTP Answer";
             this.testHttpAnswerButton.UseVisualStyleBackColor = true;
@@ -849,10 +897,11 @@ namespace ACMEForms
             // challengesTabPage
             // 
             this.challengesTabPage.Controls.Add(this.challengesTableLayoutPanel);
-            this.challengesTabPage.Location = new System.Drawing.Point(8, 39);
+            this.challengesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.challengesTabPage.Margin = new System.Windows.Forms.Padding(2);
             this.challengesTabPage.Name = "challengesTabPage";
-            this.challengesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.challengesTabPage.Size = new System.Drawing.Size(1222, 929);
+            this.challengesTabPage.Padding = new System.Windows.Forms.Padding(2);
+            this.challengesTabPage.Size = new System.Drawing.Size(606, 44);
             this.challengesTabPage.TabIndex = 1;
             this.challengesTabPage.Text = "Full Challenge Details";
             this.challengesTabPage.UseVisualStyleBackColor = true;
@@ -860,27 +909,28 @@ namespace ACMEForms
             // challengesTableLayoutPanel
             // 
             this.challengesTableLayoutPanel.ColumnCount = 2;
-            this.challengesTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.challengesTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.challengesTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.challengesTableLayoutPanel.Controls.Add(this.miscChallengeTypesListBox, 1, 0);
             this.challengesTableLayoutPanel.Controls.Add(this.challengeDetailsTabControl, 1, 1);
             this.challengesTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.challengesTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            this.challengesTableLayoutPanel.Location = new System.Drawing.Point(2, 2);
+            this.challengesTableLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
             this.challengesTableLayoutPanel.Name = "challengesTableLayoutPanel";
             this.challengesTableLayoutPanel.RowCount = 2;
             this.challengesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.challengesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.challengesTableLayoutPanel.Size = new System.Drawing.Size(1216, 923);
+            this.challengesTableLayoutPanel.Size = new System.Drawing.Size(602, 40);
             this.challengesTableLayoutPanel.TabIndex = 0;
             // 
             // miscChallengeTypesListBox
             // 
             this.miscChallengeTypesListBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.miscChallengeTypesListBox.FormattingEnabled = true;
-            this.miscChallengeTypesListBox.ItemHeight = 25;
-            this.miscChallengeTypesListBox.Location = new System.Drawing.Point(24, 3);
+            this.miscChallengeTypesListBox.Location = new System.Drawing.Point(12, 2);
+            this.miscChallengeTypesListBox.Margin = new System.Windows.Forms.Padding(2);
             this.miscChallengeTypesListBox.Name = "miscChallengeTypesListBox";
-            this.miscChallengeTypesListBox.Size = new System.Drawing.Size(1189, 154);
+            this.miscChallengeTypesListBox.Size = new System.Drawing.Size(588, 82);
             this.miscChallengeTypesListBox.TabIndex = 2;
             this.miscChallengeTypesListBox.SelectedIndexChanged += new System.EventHandler(this.miscChallengeTypesListBox_SelectedIndexChanged);
             // 
@@ -890,19 +940,21 @@ namespace ACMEForms
             this.challengeDetailsTabControl.Controls.Add(this.challengeErrorTabPage);
             this.challengeDetailsTabControl.Controls.Add(this.validationRecordsTabPage);
             this.challengeDetailsTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.challengeDetailsTabControl.Location = new System.Drawing.Point(24, 163);
+            this.challengeDetailsTabControl.Location = new System.Drawing.Point(12, 88);
+            this.challengeDetailsTabControl.Margin = new System.Windows.Forms.Padding(2);
             this.challengeDetailsTabControl.Name = "challengeDetailsTabControl";
             this.challengeDetailsTabControl.SelectedIndex = 0;
-            this.challengeDetailsTabControl.Size = new System.Drawing.Size(1189, 757);
+            this.challengeDetailsTabControl.Size = new System.Drawing.Size(588, 1);
             this.challengeDetailsTabControl.TabIndex = 32;
             // 
             // challengeDetailsTabPage
             // 
             this.challengeDetailsTabPage.Controls.Add(this.challengePopertyGrid);
-            this.challengeDetailsTabPage.Location = new System.Drawing.Point(8, 39);
+            this.challengeDetailsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.challengeDetailsTabPage.Margin = new System.Windows.Forms.Padding(2);
             this.challengeDetailsTabPage.Name = "challengeDetailsTabPage";
-            this.challengeDetailsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.challengeDetailsTabPage.Size = new System.Drawing.Size(1173, 710);
+            this.challengeDetailsTabPage.Padding = new System.Windows.Forms.Padding(2);
+            this.challengeDetailsTabPage.Size = new System.Drawing.Size(580, 0);
             this.challengeDetailsTabPage.TabIndex = 0;
             this.challengeDetailsTabPage.Text = "Challenge Details";
             this.challengeDetailsTabPage.UseVisualStyleBackColor = true;
@@ -911,20 +963,22 @@ namespace ACMEForms
             // 
             this.challengePopertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.challengePopertyGrid.HelpVisible = false;
-            this.challengePopertyGrid.Location = new System.Drawing.Point(3, 3);
+            this.challengePopertyGrid.Location = new System.Drawing.Point(2, 2);
+            this.challengePopertyGrid.Margin = new System.Windows.Forms.Padding(2);
             this.challengePopertyGrid.Name = "challengePopertyGrid";
             this.challengePopertyGrid.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.challengePopertyGrid.Size = new System.Drawing.Size(1167, 704);
+            this.challengePopertyGrid.Size = new System.Drawing.Size(576, 0);
             this.challengePopertyGrid.TabIndex = 28;
             this.challengePopertyGrid.ToolbarVisible = false;
             // 
             // challengeErrorTabPage
             // 
             this.challengeErrorTabPage.Controls.Add(this.challengeErrorTextBox);
-            this.challengeErrorTabPage.Location = new System.Drawing.Point(8, 39);
+            this.challengeErrorTabPage.Location = new System.Drawing.Point(4, 22);
+            this.challengeErrorTabPage.Margin = new System.Windows.Forms.Padding(2);
             this.challengeErrorTabPage.Name = "challengeErrorTabPage";
-            this.challengeErrorTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.challengeErrorTabPage.Size = new System.Drawing.Size(1173, 710);
+            this.challengeErrorTabPage.Padding = new System.Windows.Forms.Padding(2);
+            this.challengeErrorTabPage.Size = new System.Drawing.Size(580, 0);
             this.challengeErrorTabPage.TabIndex = 1;
             this.challengeErrorTabPage.Text = "Error";
             this.challengeErrorTabPage.UseVisualStyleBackColor = true;
@@ -932,21 +986,23 @@ namespace ACMEForms
             // challengeErrorTextBox
             // 
             this.challengeErrorTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.challengeErrorTextBox.Location = new System.Drawing.Point(3, 3);
+            this.challengeErrorTextBox.Location = new System.Drawing.Point(2, 2);
+            this.challengeErrorTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.challengeErrorTextBox.Multiline = true;
             this.challengeErrorTextBox.Name = "challengeErrorTextBox";
             this.challengeErrorTextBox.ReadOnly = true;
-            this.challengeErrorTextBox.Size = new System.Drawing.Size(1167, 704);
+            this.challengeErrorTextBox.Size = new System.Drawing.Size(576, 0);
             this.challengeErrorTextBox.TabIndex = 2;
             this.challengeErrorTextBox.WordWrap = false;
             // 
             // validationRecordsTabPage
             // 
             this.validationRecordsTabPage.Controls.Add(this.validationRecordsTextBox);
-            this.validationRecordsTabPage.Location = new System.Drawing.Point(8, 39);
+            this.validationRecordsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.validationRecordsTabPage.Margin = new System.Windows.Forms.Padding(2);
             this.validationRecordsTabPage.Name = "validationRecordsTabPage";
-            this.validationRecordsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.validationRecordsTabPage.Size = new System.Drawing.Size(1173, 710);
+            this.validationRecordsTabPage.Padding = new System.Windows.Forms.Padding(2);
+            this.validationRecordsTabPage.Size = new System.Drawing.Size(580, 0);
             this.validationRecordsTabPage.TabIndex = 2;
             this.validationRecordsTabPage.Text = "Validation Records";
             this.validationRecordsTabPage.UseVisualStyleBackColor = true;
@@ -954,11 +1010,12 @@ namespace ACMEForms
             // validationRecordsTextBox
             // 
             this.validationRecordsTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.validationRecordsTextBox.Location = new System.Drawing.Point(3, 3);
+            this.validationRecordsTextBox.Location = new System.Drawing.Point(2, 2);
+            this.validationRecordsTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.validationRecordsTextBox.Multiline = true;
             this.validationRecordsTextBox.Name = "validationRecordsTextBox";
             this.validationRecordsTextBox.ReadOnly = true;
-            this.validationRecordsTextBox.Size = new System.Drawing.Size(1167, 704);
+            this.validationRecordsTextBox.Size = new System.Drawing.Size(576, 0);
             this.validationRecordsTextBox.TabIndex = 12;
             this.validationRecordsTextBox.WordWrap = false;
             // 
@@ -974,30 +1031,33 @@ namespace ACMEForms
             this.tableLayoutPanel3.Controls.Add(this.notBeforeDateTimePicker, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.notBeforeLabel, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(34, 150);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(18, 81);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1285, 44);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(640, 23);
             this.tableLayoutPanel3.TabIndex = 10;
             // 
             // notAfterDateTimePicker
             // 
             this.notAfterDateTimePicker.Checked = false;
             this.notAfterDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.notAfterDateTimePicker.Location = new System.Drawing.Point(762, 3);
+            this.notAfterDateTimePicker.Location = new System.Drawing.Point(382, 2);
+            this.notAfterDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.notAfterDateTimePicker.Name = "notAfterDateTimePicker";
             this.notAfterDateTimePicker.ShowCheckBox = true;
-            this.notAfterDateTimePicker.Size = new System.Drawing.Size(520, 31);
+            this.notAfterDateTimePicker.Size = new System.Drawing.Size(256, 20);
             this.notAfterDateTimePicker.TabIndex = 3;
             // 
             // notAfterLabel
             // 
             this.notAfterLabel.AutoSize = true;
             this.notAfterLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.notAfterLabel.Location = new System.Drawing.Point(654, 0);
+            this.notAfterLabel.Location = new System.Drawing.Point(326, 0);
+            this.notAfterLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.notAfterLabel.Name = "notAfterLabel";
-            this.notAfterLabel.Size = new System.Drawing.Size(102, 44);
+            this.notAfterLabel.Size = new System.Drawing.Size(52, 23);
             this.notAfterLabel.TabIndex = 1;
             this.notAfterLabel.Text = "Not After:";
             this.notAfterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1006,19 +1066,21 @@ namespace ACMEForms
             // 
             this.notBeforeDateTimePicker.Checked = false;
             this.notBeforeDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.notBeforeDateTimePicker.Location = new System.Drawing.Point(129, 3);
+            this.notBeforeDateTimePicker.Location = new System.Drawing.Point(67, 2);
+            this.notBeforeDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.notBeforeDateTimePicker.Name = "notBeforeDateTimePicker";
             this.notBeforeDateTimePicker.ShowCheckBox = true;
-            this.notBeforeDateTimePicker.Size = new System.Drawing.Size(519, 31);
+            this.notBeforeDateTimePicker.Size = new System.Drawing.Size(255, 20);
             this.notBeforeDateTimePicker.TabIndex = 2;
             // 
             // notBeforeLabel
             // 
             this.notBeforeLabel.AutoSize = true;
             this.notBeforeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.notBeforeLabel.Location = new System.Drawing.Point(3, 0);
+            this.notBeforeLabel.Location = new System.Drawing.Point(2, 0);
+            this.notBeforeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.notBeforeLabel.Name = "notBeforeLabel";
-            this.notBeforeLabel.Size = new System.Drawing.Size(120, 44);
+            this.notBeforeLabel.Size = new System.Drawing.Size(61, 23);
             this.notBeforeLabel.TabIndex = 0;
             this.notBeforeLabel.Text = "Not Before:";
             this.notBeforeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1030,21 +1092,24 @@ namespace ACMEForms
             this.orderButtonsFlowLayoutPanel.Controls.Add(this.createOrderButton);
             this.orderButtonsFlowLayoutPanel.Controls.Add(this.refreshOrderButton);
             this.orderButtonsFlowLayoutPanel.Controls.Add(this.clearOrderButton);
-            this.orderButtonsFlowLayoutPanel.Location = new System.Drawing.Point(34, 200);
+            this.orderButtonsFlowLayoutPanel.Controls.Add(this.btnDeactivateAuth);
+            this.orderButtonsFlowLayoutPanel.Controls.Add(this.btnUploadCSR);
+            this.orderButtonsFlowLayoutPanel.Location = new System.Drawing.Point(18, 108);
+            this.orderButtonsFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
             this.orderButtonsFlowLayoutPanel.Name = "orderButtonsFlowLayoutPanel";
-            this.orderButtonsFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.orderButtonsFlowLayoutPanel.Size = new System.Drawing.Size(1285, 94);
+            this.orderButtonsFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.orderButtonsFlowLayoutPanel.Size = new System.Drawing.Size(640, 49);
             this.orderButtonsFlowLayoutPanel.TabIndex = 3;
             // 
             // createOrderButton
             // 
             this.createOrderButton.AutoSize = true;
             this.createOrderButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.createOrderButton.Location = new System.Drawing.Point(20, 20);
-            this.createOrderButton.Margin = new System.Windows.Forms.Padding(10);
+            this.createOrderButton.Location = new System.Drawing.Point(10, 10);
+            this.createOrderButton.Margin = new System.Windows.Forms.Padding(5);
             this.createOrderButton.Name = "createOrderButton";
-            this.createOrderButton.Padding = new System.Windows.Forms.Padding(10);
-            this.createOrderButton.Size = new System.Drawing.Size(166, 55);
+            this.createOrderButton.Padding = new System.Windows.Forms.Padding(5);
+            this.createOrderButton.Size = new System.Drawing.Size(87, 33);
             this.createOrderButton.TabIndex = 6;
             this.createOrderButton.Text = "Create Order";
             this.createOrderButton.UseVisualStyleBackColor = true;
@@ -1054,11 +1119,11 @@ namespace ACMEForms
             // 
             this.refreshOrderButton.AutoSize = true;
             this.refreshOrderButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.refreshOrderButton.Location = new System.Drawing.Point(206, 20);
-            this.refreshOrderButton.Margin = new System.Windows.Forms.Padding(10);
+            this.refreshOrderButton.Location = new System.Drawing.Point(107, 10);
+            this.refreshOrderButton.Margin = new System.Windows.Forms.Padding(5);
             this.refreshOrderButton.Name = "refreshOrderButton";
-            this.refreshOrderButton.Padding = new System.Windows.Forms.Padding(10);
-            this.refreshOrderButton.Size = new System.Drawing.Size(189, 55);
+            this.refreshOrderButton.Padding = new System.Windows.Forms.Padding(5);
+            this.refreshOrderButton.Size = new System.Drawing.Size(99, 33);
             this.refreshOrderButton.TabIndex = 7;
             this.refreshOrderButton.Text = "Referesh Order";
             this.refreshOrderButton.UseVisualStyleBackColor = true;
@@ -1068,22 +1133,33 @@ namespace ACMEForms
             // 
             this.clearOrderButton.AutoSize = true;
             this.clearOrderButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.clearOrderButton.Location = new System.Drawing.Point(415, 20);
-            this.clearOrderButton.Margin = new System.Windows.Forms.Padding(10);
+            this.clearOrderButton.Location = new System.Drawing.Point(216, 10);
+            this.clearOrderButton.Margin = new System.Windows.Forms.Padding(5);
             this.clearOrderButton.Name = "clearOrderButton";
-            this.clearOrderButton.Padding = new System.Windows.Forms.Padding(10);
-            this.clearOrderButton.Size = new System.Drawing.Size(153, 55);
+            this.clearOrderButton.Padding = new System.Windows.Forms.Padding(5);
+            this.clearOrderButton.Size = new System.Drawing.Size(80, 33);
             this.clearOrderButton.TabIndex = 8;
             this.clearOrderButton.Text = "Clear Order";
             this.clearOrderButton.UseVisualStyleBackColor = true;
             this.clearOrderButton.Click += new System.EventHandler(this.clearOrderButton_Click);
             // 
+            // btnDeactivateAuth
+            // 
+            this.btnDeactivateAuth.Location = new System.Drawing.Point(304, 8);
+            this.btnDeactivateAuth.Name = "btnDeactivateAuth";
+            this.btnDeactivateAuth.Size = new System.Drawing.Size(75, 35);
+            this.btnDeactivateAuth.TabIndex = 9;
+            this.btnDeactivateAuth.Text = "Deactivate Auth";
+            this.btnDeactivateAuth.UseVisualStyleBackColor = true;
+            this.btnDeactivateAuth.Click += new System.EventHandler(this.button1_Click);
+            // 
             // dnsIdentifiersLabel
             // 
             this.dnsIdentifiersLabel.AutoSize = true;
-            this.dnsIdentifiersLabel.Location = new System.Drawing.Point(34, 0);
+            this.dnsIdentifiersLabel.Location = new System.Drawing.Point(18, 0);
+            this.dnsIdentifiersLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dnsIdentifiersLabel.Name = "dnsIdentifiersLabel";
-            this.dnsIdentifiersLabel.Size = new System.Drawing.Size(161, 25);
+            this.dnsIdentifiersLabel.Size = new System.Drawing.Size(81, 13);
             this.dnsIdentifiersLabel.TabIndex = 1;
             this.dnsIdentifiersLabel.Text = "DNS Identifiers:";
             this.dnsIdentifiersLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1092,11 +1168,12 @@ namespace ACMEForms
             // 
             this.dnsIdentifiersTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dnsIdentifiersTextBox.Location = new System.Drawing.Point(34, 28);
+            this.dnsIdentifiersTextBox.Location = new System.Drawing.Point(18, 15);
+            this.dnsIdentifiersTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.dnsIdentifiersTextBox.Multiline = true;
             this.dnsIdentifiersTextBox.Name = "dnsIdentifiersTextBox";
             this.dnsIdentifiersTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.dnsIdentifiersTextBox.Size = new System.Drawing.Size(1285, 116);
+            this.dnsIdentifiersTextBox.Size = new System.Drawing.Size(640, 62);
             this.dnsIdentifiersTextBox.TabIndex = 2;
             // 
             // mainStatusStrip
@@ -1104,25 +1181,37 @@ namespace ACMEForms
             this.mainStatusStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.mainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainStatusLabel});
-            this.mainStatusStrip.Location = new System.Drawing.Point(0, 1521);
+            this.mainStatusStrip.Location = new System.Drawing.Point(0, 367);
             this.mainStatusStrip.Name = "mainStatusStrip";
-            this.mainStatusStrip.Size = new System.Drawing.Size(1344, 37);
+            this.mainStatusStrip.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.mainStatusStrip.Size = new System.Drawing.Size(672, 22);
             this.mainStatusStrip.TabIndex = 15;
             this.mainStatusStrip.Text = "statusStrip1";
             // 
             // mainStatusLabel
             // 
             this.mainStatusLabel.Name = "mainStatusLabel";
-            this.mainStatusLabel.Size = new System.Drawing.Size(76, 32);
+            this.mainStatusLabel.Size = new System.Drawing.Size(38, 17);
             this.mainStatusLabel.Text = "Hello.";
+            // 
+            // btnUploadCSR
+            // 
+            this.btnUploadCSR.Location = new System.Drawing.Point(385, 8);
+            this.btnUploadCSR.Name = "btnUploadCSR";
+            this.btnUploadCSR.Size = new System.Drawing.Size(75, 35);
+            this.btnUploadCSR.TabIndex = 10;
+            this.btnUploadCSR.Text = "Upload CSR";
+            this.btnUploadCSR.UseVisualStyleBackColor = true;
+            this.btnUploadCSR.Click += new System.EventHandler(this.btnUploadCSR_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1344, 1558);
+            this.ClientSize = new System.Drawing.Size(672, 389);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.mainStatusStrip);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "ACME WinForms";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -1260,6 +1349,8 @@ namespace ACMEForms
         private System.Windows.Forms.Button submitDnsAnswerButton;
         private System.Windows.Forms.Button testDnsAnswerButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button btnDeactivateAuth;
+        private System.Windows.Forms.Button btnUploadCSR;
     }
 }
 
