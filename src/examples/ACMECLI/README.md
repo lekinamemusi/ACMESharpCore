@@ -13,7 +13,7 @@ mine
 
 6. acmecli --dns palerp.newmilimanisacco.co.ke --export-pfx "C:\Users\ERIC\Documents\certjuly713.pfx" --export-pfx-password " "
 
-
+ 
 
 # README - ACMECLI
 
